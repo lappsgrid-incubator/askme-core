@@ -1,8 +1,8 @@
 package org.lappsgrid.askme.core.jmx
 
-//import com.codahale.metrics.*
-//import org.slf4j.Logger
-//import org.slf4j.LoggerFactory
+import com.codahale.metrics.*
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 import javax.management.MBeanServer
 import javax.management.ObjectName
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit
  *
  */
 class Registry {
-    /*private final static MetricRegistry registry = new MetricRegistry()
+    private final static MetricRegistry registry = new MetricRegistry()
     private static JmxReporter jmxReporter
     private static Slf4jReporter logReporter
 
@@ -105,5 +105,4 @@ class Registry {
         return "org.lappsgrid.eager.mining." + name.join(".")
     }
 
-*/
 }
