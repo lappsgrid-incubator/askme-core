@@ -15,6 +15,12 @@ class Configuration {
     public final String USERNAME
     public final String PASSWORD
 
+    public final String QUERY_MBOX = 'query.mailbox'
+    public final String SOLR_MBOX = 'solr.mailbox'
+    public final String RANKING_MBOX = 'ranking.mailbox'
+    public final String NLP_MBOX = 'nlp.mailbox'
+    public final String WEB_MBOX = 'web.mailbox'
+
     Configuration() {
         File file = new File("/run/secrets/askme.ini")
         if (!file.exists()) {
