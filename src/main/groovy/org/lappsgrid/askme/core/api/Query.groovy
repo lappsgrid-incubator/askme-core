@@ -16,6 +16,24 @@ public class Query
 
     public Query() { }
 
+    public Query(Object object) {
+        if (object instanceof Map) {
+            Map map = (Map) object
+            this.question = map.question
+            this.query = map.query
+            this.terms = map.terms
+        }
+        else if (object instanceof Query) {
+            Query query = (Query) object
+            this.question = query.question
+            this.query = query.query
+            this.terms = query.terms
+        }
+        else {
+            throw new UnsupportedOperationException()
+        }
+    }
+
     public Query(String question, String query, List<String> terms) {
         this.question = question;
         this.query = query;
