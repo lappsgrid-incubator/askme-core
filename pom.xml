@@ -66,7 +66,12 @@
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-xml</artifactId>
-            <version>2.5.3</version>
+            <version>${groovy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.lappsgrid</groupId>
+            <artifactId>rabbitmq</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

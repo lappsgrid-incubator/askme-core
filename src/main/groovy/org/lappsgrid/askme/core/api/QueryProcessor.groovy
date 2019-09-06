@@ -4,6 +4,7 @@ package org.lappsgrid.askme.core.api
  * Interface for classes that transform the free-form natural language text entered by
  * the user into a query suitable for the search engine (Solr, ElasticSearch)
  */
+@Deprecated
 public interface QueryProcessor {
     /**
      * Transforms the question from the user into a valid query string.
