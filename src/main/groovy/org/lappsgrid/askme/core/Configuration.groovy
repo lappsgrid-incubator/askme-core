@@ -5,17 +5,15 @@ package org.lappsgrid.askme.core
  */
 class Configuration {
 
-    public static final String PROPERTY_HOST = "RABBIT_HOST"
-    public static final String PROPERTY_USERNAME = "RABBIT_USERNAME"
-    public static final String PROPERTY_PASSWORD = "RABBIT_PASSWORD"
-    public static final String PROPERTY_EXCHANGE = "RABBIT_EXCHANGE"
-    public static final String PROPERTY_GALAXY_KEY = "GALAXY_KEY"
+    public static String PROPERTY_HOST = "RABBIT_HOST"
+    public static String PROPERTY_USERNAME = "RABBIT_USERNAME"
+    public static String PROPERTY_PASSWORD = "RABBIT_PASSWORD"
+    public static String PROPERTY_EXCHANGE = "RABBIT_EXCHANGE"
 
     public final String HOST
     public final String EXCHANGE
     public final String USERNAME
     public final String PASSWORD
-    public final String GALAXY_KEY
 
     public final String QUERY_MBOX = 'query.mailbox'
     public final String SOLR_MBOX = 'solr.mailbox'
@@ -36,7 +34,6 @@ class Configuration {
             USERNAME = properties.getProperty(PROPERTY_USERNAME, "guest")
             PASSWORD = properties.getProperty(PROPERTY_PASSWORD, "guest")
             EXCHANGE = properties.getProperty(PROPERTY_EXCHANGE, "askme")
-            GALAXY_KEY = properties.getProperty(PROPERTY_GALAXY_KEY, "01234567abcdef")
         }
 
         // Allow environment variables or System properties to override values from the ini file.
@@ -44,7 +41,6 @@ class Configuration {
         USERNAME = getPropertyValue(PROPERTY_USERNAME, USERNAME)
         PASSWORD = getPropertyValue(PROPERTY_PASSWORD, PASSWORD)
         EXCHANGE = getPropertyValue(PROPERTY_EXCHANGE, EXCHANGE)
-        GALAXY_KEY = getPropertyValue(PROPERTY_GALAXY_KEY, GALAXY_KEY)
 
         System.setProperty("RABBIT_USERNAME", USERNAME)
         System.setProperty("RABBIT_PASSWORD", PASSWORD)
