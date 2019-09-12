@@ -1,7 +1,6 @@
 package org.lappsgrid.askme.core.model
 
 import org.lappsgrid.askme.core.api.Scores
-import org.lappsgrid.askme.core.model.Section
 
 /**
  *
@@ -16,13 +15,13 @@ class Document {
 
     Section title
     Section articleAbstract
-//    Section body
-    String body
+    Section body
 
     String path
 
     /** The total score for the document. */
     float score
+
     /** The scores for each section. */
     Map<String, Scores> scores
 
