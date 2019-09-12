@@ -10,16 +10,21 @@ import java.util.List;
  */
 public class Query
 {
-    private String question;
-    private String query;
-    private List<String> terms;
+    /** The text of the question entered by the user. */
+    String question;
+    /** The Solr query that was generated from the question. */
+    String query;
+    /** The key terms from the question used to generate the query. */
+    List<String> terms;
+    int count
 
     public Query() { }
 
-    public Query(String question, String query, List<String> terms) {
+    public Query(String question, int count = 100, String query = null, List<String> terms = null) {
         this.question = question;
         this.query = query;
         this.terms = terms;
+        this.count = count
     }
 
     public Query question(String question) {
@@ -45,36 +50,40 @@ public class Query
         return this;
     }
 
-
-    public void setQuestion(String question)
-    {
-        this.question = question;
+    public Query count(int n) {
+        this.count = n
+        return this
     }
 
-    public void setQuery(String query)
-    {
-        this.query = query;
-    }
-
-    public void setTerms(List<String> terms)
-    {
-        this.terms = terms;
-    }
-
-    public String getQuestion()
-    {
-        return question;
-    }
-
-    public String getQuery()
-    {
-        return query;
-    }
-
-    public List<String> getTerms()
-    {
-        return terms;
-    }
+//    public void setQuestion(String question)
+//    {
+//        this.question = question;
+//    }
+//
+//    public void setQuery(String query)
+//    {
+//        this.query = query;
+//    }
+//
+//    public void setTerms(List<String> terms)
+//    {
+//        this.terms = terms;
+//    }
+//
+//    public String getQuestion()
+//    {
+//        return question;
+//    }
+//
+//    public String getQuery()
+//    {
+//        return query;
+//    }
+//
+//    public List<String> getTerms()
+//    {
+//        return terms;
+//    }
 
     public boolean contains(String term) {
         return terms.contains(term);
