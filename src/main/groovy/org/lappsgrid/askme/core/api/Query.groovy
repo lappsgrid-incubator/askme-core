@@ -20,6 +20,24 @@ public class Query
 
     public Query() { }
 
+    public Query(Object object) {
+        if (object instanceof String) {
+            this.question = (String) object
+        }
+        else if (object instanceof Map) {
+            Map map = (Map) object
+            this.question = map.question
+            this.query = map.query
+            this.count = map.count
+            if (map.terms) {
+                this.terms = map.terms.clone()
+            }
+        }
+        else {
+            throw new UnsupportedOperationException("Invalid object type. Must be a Map or a String")
+        }
+    }
+
     public Query(String question, int count = 100, String query = null, List<String> terms = null) {
         this.question = question;
         this.query = query;
