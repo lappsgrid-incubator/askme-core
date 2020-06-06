@@ -5,7 +5,7 @@ import org.lappsgrid.askme.core.api.Scores
 /**
  *
  */
-class Document {
+class Document implements Comparable<Document> {
 
     String id
     String pmid
@@ -18,6 +18,8 @@ class Document {
     Section body
 
     String path
+    String url
+    String license
 
     /** The total score for the document. */
     float score
@@ -37,5 +39,10 @@ class Document {
             scores.put(section, forSection)
         }
         forSection[algorithm] = value
+    }
+
+    @Override
+    int compareTo(Document o) {
+        return this.score <=> o.score
     }
 }

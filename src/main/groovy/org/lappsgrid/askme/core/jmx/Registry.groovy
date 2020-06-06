@@ -11,7 +11,9 @@ import java.util.concurrent.TimeUnit
 
 /**
  *
+ * @Deprecated Use the metrics classes from io,micrometer instead.
  */
+@Deprecated
 class Registry {
     private final static MetricRegistry registry = new MetricRegistry()
     private static JmxReporter jmxReporter

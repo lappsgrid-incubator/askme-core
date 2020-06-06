@@ -9,11 +9,13 @@ class Configuration {
     public static String PROPERTY_USERNAME = "RABBIT_USERNAME"
     public static String PROPERTY_PASSWORD = "RABBIT_PASSWORD"
     public static String PROPERTY_EXCHANGE = "RABBIT_EXCHANGE"
+    public static String PROPERTY_GALAXY_KEY = "GALAXY_KEY"
 
     public final String HOST
     public final String EXCHANGE
     public final String USERNAME
     public final String PASSWORD
+    public final String GALAXY_KEY
 
     public final String QUERY_MBOX = 'query.mailbox'
     public final String SOLR_MBOX = 'solr.mailbox'
@@ -34,6 +36,7 @@ class Configuration {
             USERNAME = properties.getProperty(PROPERTY_USERNAME, "guest")
             PASSWORD = properties.getProperty(PROPERTY_PASSWORD, "guest")
             EXCHANGE = properties.getProperty(PROPERTY_EXCHANGE, "askme")
+            GALAXY_KEY = properties.getProperty(PROPERTY_GALAXY_KEY, 'BADF00D')
         }
 
         // Allow environment variables or System properties to override values from the ini file.

@@ -11,4 +11,6 @@ class Packet {
     Query query
     Scores scores
     List<Document> documents
+    Status status
+    String message
 }
