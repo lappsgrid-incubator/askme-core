@@ -1,4 +1,4 @@
-package org.lappsgrid.askme.core
+package org.lappsgrid.askme.core.concurrent
 
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit

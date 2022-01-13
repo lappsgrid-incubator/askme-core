@@ -8,6 +8,16 @@ import java.util.function.Consumer
 class Scores implements Iterable<Map.Entry<String,Float>> {
     Map<String,Float> scores = [:]
 
+//    Scores() {
+//        this.scores = [:]
+//    }
+//
+//    Scores(Map<String,Float> map) {
+//        map.each { k,v ->
+//            scores[k] = v
+//        }
+//    }
+
     void put(String key, Float score) {
         scores[key] = score
     }

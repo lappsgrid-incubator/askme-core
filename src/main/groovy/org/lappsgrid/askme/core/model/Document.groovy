@@ -1,10 +1,12 @@
 package org.lappsgrid.askme.core.model
 
+import groovy.transform.MapConstructor
 import org.lappsgrid.askme.core.api.Scores
 
 /**
  *
  */
+@MapConstructor
 class Document implements Comparable<Document> {
 
     String id

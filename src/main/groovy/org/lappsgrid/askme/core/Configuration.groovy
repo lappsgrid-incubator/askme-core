@@ -22,6 +22,7 @@ class Configuration {
     public final String RANKING_MBOX = 'ranking.mailbox'
     public final String NLP_MBOX = 'nlp.mailbox'
     public final String WEB_MBOX = 'web.mailbox'
+    public final String METRICS_MBOX = 'metrics.mailbox'
 
     Configuration() {
         File file = new File("/run/secrets/askme.ini")
