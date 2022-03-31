@@ -22,6 +22,9 @@ class Document implements Comparable<Document> {
     String path
     String url
     String license
+	
+	/** native score from search platform **/
+	float nscore;
 
     /** The total score for the document. */
     float score
