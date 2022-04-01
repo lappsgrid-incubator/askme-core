@@ -91,6 +91,9 @@ class CSVParser {
 						state = State.end_quote;
 					}
 				}
+				else if (ch == '['){
+					// skip bracket
+				}
 				else {
 					buffer.append(ch);
 				}
@@ -123,8 +126,13 @@ class CSVParser {
 					state = State.start;
 				}
 				else {
-					buffer.append(ch);
-					state = State.in_field;
+					if(ch == ']') {
+						// skip bracket	
+					}
+					else {
+						buffer.append(ch);
+						state = State.in_field;
+					}
 				}
 			}
 			else {
@@ -144,14 +152,8 @@ class CSVParser {
 		String id = identry[0];
 	
 		// get VALUE
-		String value = tokens[2];
-		if(value.endsWith("metadata")) {
-			value = value.substring(0, (value.length()-10));
-			value = value.substring(0, (value.length()-1));
-		}else {
-			value = value.substring(0, (value.length()-1)); 
-		}
-		
+		String [] valentry = tokens[2].split(",");
+		String value = valentry[0];
 			
 		System.out.println("ID:" + id);
 		System.out.println("Query:" + value );
