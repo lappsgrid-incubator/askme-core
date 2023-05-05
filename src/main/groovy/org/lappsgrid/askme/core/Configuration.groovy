@@ -10,21 +10,20 @@ class Configuration {
     public static String PROPERTY_PASSWORD = "RABBIT_PASSWORD"
     public static String PROPERTY_EXCHANGE = "RABBIT_EXCHANGE"
     public static String PROPERTY_GALAXY_KEY = "GALAXY_KEY"
-	public static String PROPERTY_ELASTICHOST = "ELASTIC_HOST"
-	public static String PROPERTY_ELASTICPORT = "ELASTIC_PORT"
-	
+    public static String PROPERTY_ELASTICHOST = "ELASTIC_HOST"
+    public static String PROPERTY_ELASTICPORT = "ELASTIC_PORT"
 
     public final String HOST
     public final String EXCHANGE
     public final String USERNAME
     public final String PASSWORD
     public final String GALAXY_KEY
-	public final String ELASTICHOST
-	public final String ELASTICPORT
+    public final String ELASTICHOST
+    public final String ELASTICPORT
 
     public final String QUERY_MBOX = 'query.mailbox'
     public final String SOLR_MBOX = 'solr.mailbox'
-	public final String ELASTIC_MBOX = 'elastic.mailbox'
+    public final String ELASTIC_MBOX = 'elastic.mailbox'
     public final String RANKING_MBOX = 'ranking.mailbox'
     public final String NLP_MBOX = 'nlp.mailbox'
     public final String WEB_MBOX = 'web.mailbox'
@@ -35,17 +34,17 @@ class Configuration {
         if (!file.exists()) {
             file = new File("/etc/lapps/askme.ini")
         }
-        // Load the ini file if it is exists.
+        // Load the ini file if it exists.
         if (file.exists()) {
             Properties properties = new Properties()
             properties.load(new FileReader(file))
-            HOST = properties.getProperty(PROPERTY_HOST, "locahost")
+            HOST = properties.getProperty(PROPERTY_HOST, "localhost")
             USERNAME = properties.getProperty(PROPERTY_USERNAME, "guest")
             PASSWORD = properties.getProperty(PROPERTY_PASSWORD, "guest")
             EXCHANGE = properties.getProperty(PROPERTY_EXCHANGE, "askme")
             GALAXY_KEY = properties.getProperty(PROPERTY_GALAXY_KEY, 'BADF00D')
-			ELASTICHOST = properties.getProperty(PROPERTY_ELASTICHOST, "locahost");
-			ELASTICPORT = properties.getProperty(PROPERTY_ELASTICPORT, "9200");
+            ELASTICHOST = properties.getProperty(PROPERTY_ELASTICHOST, "localhost");
+            ELASTICPORT = properties.getProperty(PROPERTY_ELASTICPORT, "9200");
         }
 
         // Allow environment variables or System properties to override values from the ini file.
