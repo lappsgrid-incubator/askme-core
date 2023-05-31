@@ -38,13 +38,13 @@ class Configuration {
         if (file.exists()) {
             Properties properties = new Properties()
             properties.load(new FileReader(file))
-            HOST = properties.getProperty(PROPERTY_HOST, "localhost")
+            HOST = properties.getProperty(PROPERTY_HOST, "locahost")
             USERNAME = properties.getProperty(PROPERTY_USERNAME, "guest")
             PASSWORD = properties.getProperty(PROPERTY_PASSWORD, "guest")
             EXCHANGE = properties.getProperty(PROPERTY_EXCHANGE, "askme")
             GALAXY_KEY = properties.getProperty(PROPERTY_GALAXY_KEY, 'BADF00D')
-            ELASTICHOST = properties.getProperty(PROPERTY_ELASTICHOST, "localhost");
-            ELASTICPORT = properties.getProperty(PROPERTY_ELASTICPORT, "9200");
+			ELASTICHOST = properties.getProperty(PROPERTY_ELASTICHOST, "locahost");
+			ELASTICPORT = properties.getProperty(PROPERTY_ELASTICPORT, "9200");
         }
 
         // Allow environment variables or System properties to override values from the ini file.

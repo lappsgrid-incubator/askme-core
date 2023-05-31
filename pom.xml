@@ -14,6 +14,7 @@
     <version>2.1.0-SNAPSHOT</version>
 
     <build>
+        <finalName>${project.artifactId}-${project.version}-${git.commit.id.describe-short}</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -53,6 +54,24 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <!--<version>${git-commit-id-plugin.version}</version>-->
+                <version>4.9.9</version>
+                <executions>
+                    <execution>
+                        <id>get-the-git-infos</id>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                        <phase>validate</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                </configuration>
             </plugin>
             <!--
             <plugin>
