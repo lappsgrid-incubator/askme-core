@@ -16,7 +16,8 @@ public class Query
     String query;
     /** The key terms from the question used to generate the query. */
     List<String> terms;
-    int count
+	/** default result count to return **/
+    int count=100;
 
     public Query() { }
 
@@ -37,6 +38,14 @@ public class Query
             throw new UnsupportedOperationException("Invalid object type. Must be a Map or a String")
         }
     }
+	
+//	public Query(String question, int count) {
+//		this.question = question;
+//		this.query = null;
+//		this.terms = null;
+//		this.count = count
+//	}
+
 
     public Query(String question, int count = 100, String query = null, List<String> terms = null) {
         this.question = question;
@@ -44,7 +53,7 @@ public class Query
         this.terms = terms;
         this.count = count
     }
-
+	
     public Query question(String question) {
         this.question = question;
         return this;

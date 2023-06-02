@@ -1,10 +1,12 @@
 package org.lappsgrid.askme.core.model
 
+import groovy.transform.MapConstructor
 import org.lappsgrid.askme.core.api.Scores
 
 /**
  *
  */
+@MapConstructor
 class Document implements Comparable<Document> {
 
     String id
@@ -20,6 +22,39 @@ class Document implements Comparable<Document> {
     String path
     String url
     String license
+	
+	String UserLicense;
+	String authKeyWords;
+	String authors;
+	String contents_url;
+	String contents;
+	String coverDate;
+	String eissn;
+	String endingPage;
+	String fetched;
+	String file_urls;
+	String filepath;
+	String issn;
+	String issue;
+	String metadata_update;
+	String online_pubdate;
+	String openaccess;
+	String preprint;
+	String priority;
+	String publication_date;
+	String publisher;
+	String pubname;
+	String sha1;
+	String source;
+	String startingPage;
+	String tags;
+	String time;
+	String vol;
+	
+	
+	
+	/** native score from search platform **/
+	float nscore;
 
     /** The total score for the document. */
     float score
