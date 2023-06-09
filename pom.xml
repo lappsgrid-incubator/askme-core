@@ -131,6 +131,7 @@
             <releases><enabled>true</enabled></releases>
             <snapshots><enabled>false</enabled></snapshots>
         </repository>
+        <!--
         <repository>
             <snapshots>
                 <enabled>false</enabled>
@@ -139,6 +140,7 @@
             <name>bintray</name>
             <url>https://dl.bintray.com/groovy/maven</url>
         </repository>
+        -->
     </repositories>
 
     <pluginRepositories>
