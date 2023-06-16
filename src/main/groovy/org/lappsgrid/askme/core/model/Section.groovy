@@ -6,6 +6,7 @@ import java.util.function.Consumer
  *
  */
 class Section implements Iterable<Sentence> {
+
     String text
     List<Token> tokens
     List<Sentence> sentences

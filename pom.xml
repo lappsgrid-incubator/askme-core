@@ -13,7 +13,11 @@
 
     <groupId>org.lappsgrid.askme</groupId>
     <artifactId>core</artifactId>
-    <version>2.2.0</version>
+    <version>2.3.0-SNAPSHOT</version>
+
+    <properties>
+        <lappsgrid.rabbitmq.version>1.2.0</lappsgrid.rabbitmq.version>
+    </properties>
 
     <build>
         <finalName>${project.artifactId}-${project.version}-${git.commit.id.describe}</finalName>
@@ -113,7 +117,7 @@
         <dependency>
             <groupId>org.lappsgrid</groupId>
             <artifactId>rabbitmq</artifactId>
-            <version>1.2.0</version>
+            <version>${lappsgrid.rabbitmq.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -131,16 +135,6 @@
             <releases><enabled>true</enabled></releases>
             <snapshots><enabled>false</enabled></snapshots>
         </repository>
-        <!--
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-groovy-maven</id>
-            <name>bintray</name>
-            <url>https://dl.bintray.com/groovy/maven</url>
-        </repository>
-        -->
     </repositories>
 
     <pluginRepositories>

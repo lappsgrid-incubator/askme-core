@@ -6,6 +6,7 @@ import java.util.function.Consumer
  *
  */
 class Sentence implements Iterable<Token> {
+
     int start
     int end
 

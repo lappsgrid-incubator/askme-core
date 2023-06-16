@@ -50,9 +50,8 @@ class Document implements Comparable<Document> {
 	String tags;
 	String time;
 	String vol;
-	
-	
-	
+
+
 	/** native score from search platform **/
 	float nscore;
 
