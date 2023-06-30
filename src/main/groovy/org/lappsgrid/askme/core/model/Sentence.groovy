@@ -33,4 +33,9 @@ class Sentence implements Iterable<Token> {
     void forEach(Consumer<? super Token> action) {
         tokens.forEach(action)
     }
+
+    public String toString() {
+        return sprintf("<Sentence %s %s tokens=%s", start, end, tokens.size())
+    }
+
 }

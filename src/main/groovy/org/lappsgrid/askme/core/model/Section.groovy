@@ -29,4 +29,8 @@ class Section implements Iterable<Sentence> {
     void forEach(Consumer<? super Sentence> action) {
         sentences.forEach(action)
     }
+
+    public int size() {
+        return text.size()
+    }
 }

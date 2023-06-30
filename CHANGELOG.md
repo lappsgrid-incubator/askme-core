@@ -8,6 +8,8 @@ The format is loosely based on [Keep a Changelog](http://keepachangelog.com/). L
 ## Version 2.3.0
 
 - Fixed typos in Configuration file.
+- Added printing and size methods.
+- Added code to shrink sections by removing tokens and sentences.
 
 ## Version 2.2.0
 

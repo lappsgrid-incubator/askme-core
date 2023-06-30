@@ -23,7 +23,7 @@ class Document implements Comparable<Document> {
     String url
     String license
 	
-	String UserLicense;
+	String userLicense;
 	String authKeyWords;
 	String authors;
 	String contents_url;
@@ -62,8 +62,11 @@ class Document implements Comparable<Document> {
     Map<String, Scores> scores
 
     Document() {
-        score = 0.0f
-        scores = [:]
+		title = new Section()
+		articleAbstract = new Section()
+		body = new Section()
+	    score = 0.0f
+	    scores = [:]
     }
 
     void addScore(String section, String algorithm, float value) {
@@ -79,4 +82,38 @@ class Document implements Comparable<Document> {
     int compareTo(Document o) {
         return this.score <=> o.score
     }
+
+    public String toString() {
+        return sprintf("<Document %s score=%s url=%s>", id, nscore, url);
+    }
+
+    public int size() {
+		// for now just add up the sizes of the abstract and the body
+		int totalSize = 0
+		if (self.articleAbstract != null) {
+			totalSize += articleAbstract.size() }
+		if (self.body != null) {
+			totalSize += body.size() }
+		return totalSize
+	}
+
+    /**
+     * Set the tokens and sentences list of the Section instances in the Document
+     * to empty lists.
+     */
+	public void shrinkSections() {
+		if (title != null) {
+			title.tokens = []
+			title.sentences = []
+		}
+		if (body != null) {
+			body.tokens = []
+			body.sentences = []
+		}
+		if (articleAbstract != null) {
+			articleAbstract.tokens = []
+			articleAbstract.sentences = []
+		}
+	}
+
 }

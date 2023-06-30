@@ -30,8 +30,7 @@ class AskmeMessage extends Message<Packet> {
 
     public String toString() {
         return \
-            sprintf("<AskmeMessage %s>", id) \
-            + "\n    command=" + command \
+            sprintf("<AskmeMessage %s %s>", id, command) \
             + "\n    route=" + route \
             + "\n    parameters=" + parameters  \
             + "\n    body=" + body.toString()

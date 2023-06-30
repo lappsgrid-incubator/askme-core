@@ -12,4 +12,8 @@ class Token {
     String lemma
     String pos
     String category
+
+    public String toString() {
+        return sprintf("<Token %s %s %s %s", category, start, end, word)
+    }
 }
