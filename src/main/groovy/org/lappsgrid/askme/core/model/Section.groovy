@@ -6,6 +6,7 @@ import java.util.function.Consumer
  *
  */
 class Section implements Iterable<Sentence> {
+
     String text
     List<Token> tokens
     List<Sentence> sentences
@@ -27,5 +28,9 @@ class Section implements Iterable<Sentence> {
     @Override
     void forEach(Consumer<? super Sentence> action) {
         sentences.forEach(action)
+    }
+
+    public int size() {
+        return text.size()
     }
 }
